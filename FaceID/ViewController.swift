@@ -80,8 +80,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     //
     // For Notification based on Location
     var locationManager:CLLocationManager = CLLocationManager()
-    let appleAcademyLocation = CLLocation(latitude: -6.302140 as CLLocationDegrees, longitude:106.652559 as CLLocationDegrees)
-    let regionRadius: CLLocationDistance = 5
+    let appleAcademyLocation = CLLocation(latitude: -6.294985 as CLLocationDegrees, longitude:106.641842 as CLLocationDegrees)
+ //   let regionRadius: CLLocationDistance = 5
     let center = UNUserNotificationCenter.current()
     
 
@@ -104,7 +104,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     //   mapViewLoad.showsUserLocation = true
         locationManager.distanceFilter = 100
         
-        let geoFenceRegion: CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(-6.302140,106.652559), radius: 50, identifier: "AppleAcademy")
+        let geoFenceRegion: CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(-6.295152,106.641767), radius: 2, identifier: "AppleAcademy")
         locationManager.startMonitoring(for: geoFenceRegion)
         //locationManager.stopUpdatingLocation()
         // Do any additional setup after loading the view.
@@ -227,7 +227,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         content.body = "Please Click This Message to Clock In/Out"
         content.sound = UNNotificationSound.default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
         
         let notificationRequest:UNNotificationRequest = UNNotificationRequest(identifier: "Region", content: content, trigger: trigger)
         
