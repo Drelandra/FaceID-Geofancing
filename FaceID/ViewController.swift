@@ -94,7 +94,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //  method, which is triggered as a result of the state change made in the callback),
         //  because that might result in deadlock.
         context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
-        
         // For notification based on location
         requestPermissionNotifications()
         locationManager.delegate = self
@@ -104,7 +103,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     //   mapViewLoad.showsUserLocation = true
         locationManager.distanceFilter = 100
         
-        let geoFenceRegion: CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(-6.295152,106.641767), radius: 2, identifier: "AppleAcademy")
+        let geoFenceRegion: CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(-6.295152,106.641767), radius: 20, identifier: "AppleAcademy")
         locationManager.startMonitoring(for: geoFenceRegion)
         //locationManager.stopUpdatingLocation()
         // Do any additional setup after loading the view.
